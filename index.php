@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="José Igor | @j.igr ">
+		<meta http-equiv="refresh" content="200" >
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<!--
+		<script>
+			/*const test = prompt("Nome: ", "Senha");*/
+
+			let igor = prompt("Insira o seu nome de usuário:");
+
+			while (!/^[a-zA-Z0-9]{4,}$/.test(igor)) {
+				alert("Nome de usuário inválido. Ele deve conter pelo menos 4 caracteres alfanuméricos.");
+				igor = prompt("Por Favor, Insira o seu nome de usuário:");
+			}
+
+			alert(`Bem-vindo, ${igor}!`);
+
+		</script>
+		-->
+		<title>Envie sua mensagem</title>
+    
+    
+		<link  rel="icon"   href="favicon.png" type="image/png" />
+		<link href="vendor/emoji-picker/lib/css/emoji.css" rel="stylesheet">
+		<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+		<script src="vendor/emoji-picker/lib/js/config.js"></script>
+		<script src="vendor/emoji-picker/lib/js/util.js"></script>
+		<script src="vendor/emoji-picker/lib/js/jquery.emojiarea.js"></script>
+		<script src="vendor/emoji-picker/lib/js/emoji-picker.js"></script>
+
+		<!-- Bootstrap core CSS -->
+		<link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- estilo customizado para esse template -->
+		<link href="assets/sticky-footer-navbar.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+		<div id="logar">
+			<button type="button" id="login"><a href="./login.html">LOGIN</a></button>
+		</div>
+		<hr>
+<!-- conteudo com style do h1 e body-->
+		<h1 style="padding-bottom: 0; 
+				margin: 0 auto;
+				/*margin-left: 350px;*/
+				background-image: url(./imagens/logo.png); height: 163px;
+				background-repeat: no-repeat;
+				display: block;
+				/*margin-left: auto;
+				margin-right: auto;*/
+				width: 50%;
+				" >
+		</h1>
+
+		<hr> 
+
+<div class="container">
+      <h3 class="mt-5" style="padding-top: 0;"><center>Sua opnião é importante</center></h3>
+      <hr>
+      <div class="row">
+    <div class="col-12 col-md-12"> 
+          <!-- Conteudo -->
+
+<div class="output-container">
+<div class="comment-form-container">
+<form id="frm-comment">
+<div class="input-row">
+    <input type="hidden" name="comment_id" id="commentId" placeholder="Name" /> 
+    <input class="form-control" type="text" name="name" id="name" placeholder="nome" />
+</div>
+
+<!-- Area de Texto para input dos comentarios-->
+<div class="input-row">
+    <p class="emoji-picker-container">
+      <textarea class="input-field" data-emojiable="true" data-emoji-input="unicode" type="text" name="comment" id="comment" placeholder="sua mensagem"></textarea>
+    </p>
+</div>
+<!-- 
+	BUTTON DO COMENTAR
+	commentID CHAMA O INPUT NO SCRIPT E ENVIA PARA AS REPLYS
+-->
+<button
+ 	type="submit" class="btn btn-primary"
+	id="submitButton"
+	style="margin-left: 350px;
+	border-radius:30px;
+	height:50px;">
+	Comentar
+</button>
+
+<div>
+	<!--input button (botão comentar =>
+	 lembrar de passar metodo type submit button)
+	-->
+	
+<!--
+    <input style="height: 60px; border-radius:30px;
+	margin-left:350px; text-shadow: 0.4px 0.4px #ffff;
+	font-weight:bold;" 
+	type="button" class="btn btn-primary" 
+	id="submitButton" value="Comentar"/>
+	<div id="comment-message">Comentario Criado</div> -->
+</div>
+
+</form>
+<!-- Saida do script post dos comentarios-->
+</div>
+	<div id="output">
+	</div>
+</div>
+
+<script>
+
+function postReply(commentId) {
+	$('#commentId').val(commentId);
+	$("#name").focus();
+}
+
+$("#submitButton").click(function () {
+	$("#comment-message").css('display', 'none');
+	var str = $("#frm-comment").serialize();
+
+	$.ajax({
+		url: "AgregarComentario.php",
+		data: str,
+		type: 'post',
+		success: function (response)
+		{
+			$("#comment-message").css('display', 'inline-block');
+			$("#name").val("");
+			$("#comment").val("");
+			$("#commentId").val("");
+			listComment();
+		}
+	});
+});
+
+$(document).ready(function () {
+	listComment();
+});
+
+$(function () {
+	// Initializes and creates emoji set from sprite sheet
+	window.emojiPicker = new EmojiPicker({
+		emojiable_selector: '[data-emojiable=true]',
+		assetsPath: 'vendor/emoji-picker/lib/img/',
+		popupButtonClasses: 'icon-smile'
+	});
+
+	window.emojiPicker.discover();
+});
+
+function listComment() {
+$.post("ListaComentario.php",
+function (data) {
+	var data = JSON.parse(data);
+
+	var comments = "";
+	var replies = "";
+	var item = "";
+	var parent = -1;
+	var results = new Array();
+
+	var list = $("<ul class='outer-comment'>");
+	var item = $("<li>").html(comments);
+
+	for (var i = 0; (i < data.length); i++)
+	{
+		var commentId = data[i]['co_id'];
+		parent = data[i]['parent_id'];
+
+		if (parent == "0")
+		{
+			comments =  "<div class='comment-row'>"+
+			"<div class='comment-info'><img src='user-30.png'><span class='posted-by'>" + data[i]['comentario_nombre'].toUpperCase() + "</span></div>" + 
+			"<div class='comment-text'>" + data[i]['comentarios'] + "</div>"+
+			"<div><a class='btn-reply' onClick='postReply(" + commentId + ")'></a></div>"+
+			"</div>";
+			var item = $("<li>").html(comments);
+			list.append(item);
+			var reply_list = $('<ul>');
+			item.append(reply_list);
+			listReplies(commentId, data, reply_list);
+		}
+	}
+	$("#output").html(list);
+});
+}
+
+function listReplies(commentId, data, list) {
+
+	for (var i = 0; (i < data.length); i++)
+	{
+		if (commentId == data[i].parent_id)
+		{
+			var comments = "<div class='comment-row'>"+
+			" <div class='comment-info'><img src='reply.png'><span class='posted-by'>" + data[i]['comentario_nombre'].toUpperCase() + " </span></div>" + 
+			"<div class='comment-text'>" + data[i]['comentarios'] + "</div>"+
+			"<div><a class='btn-reply' onClick='postReply(" + data[i]['co_id'] + ")'></a></div>"+
+			"</div>";
+			var item = $("<li>").html(comments);
+			var reply_list = $('<ul>');
+			list.append(item);
+			item.append(reply_list);
+			listReplies(data[i].co_id, data, reply_list);
+
+		}
+	}
+}
+
+</script>
+
+<!-- Fim do Conteudo --> 
+        </div>
+  </div>
+<!-- Fim row --> 
+      
+    </div>
+<!-- Fim do container -->
+<footer class="footer" style="border-radius: 100px; background-color: rgba(215, 243, 250, 0.466);">
+      <div class="container"> <span class="text-muted">
+        <p><strong>Visite </strong><a href="./login.html" target="_blank">Intranet</a></p>
+		
+        </span> </div>
+    </footer>
+<!-- Bootstrap core JavaScript--> 
+<script src="./dist/js/bootstrap.min.js"></script> 
+</body>
+</html>
