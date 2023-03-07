@@ -107,7 +107,7 @@
 	font-weight:bold;" 
 	type="button" class="btn btn-primary" 
 	id="submitButton" value="Comentar"/>
-	<div id="comment-message">Comentario Criado</div> -->
+	<div id="comment-message">Comentario Criado</div>  Confirmação do post -->
 </div>
 
 </form>
