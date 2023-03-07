@@ -111,7 +111,7 @@
 </div>
 
 </form>
-<!-- Saida do script post dos comentarios-->
+<!-- Saida do script post do comentario-->
 </div>
 	<div id="output">
 	</div>
