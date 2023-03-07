@@ -113,7 +113,12 @@
 </div>
 
 <script>
-
+/* //Função para focar no input name e inserir resposta
+function postReply(commentId) {
+	$('commentId').val(commentId);
+	$("name").focus();
+}
+*/
 $("#submitButton").click(function () {
 	$("#comment-message").css('display', 'none');
 	var str = $("#frm-comment").serialize();
