@@ -119,10 +119,12 @@
 
 <script>
 
+/*
 function postReply(commentId) {
 	$('#commentId').val(commentId);
 	$("#name").focus();
 }
+*/
 
 $("#submitButton").click(function () {
 	$("#comment-message").css('display', 'none');
