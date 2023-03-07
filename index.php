@@ -10,19 +10,6 @@
 		<meta http-equiv="Pragma" content="no-cache">
 		<meta http-equiv="Expires" content="0">
 		<!--
-		<script>
-			/*const test = prompt("Nome: ", "Senha");*/
-
-			let igor = prompt("Insira o seu nome de usuário:");
-
-			while (!/^[a-zA-Z0-9]{4,}$/.test(igor)) {
-				alert("Nome de usuário inválido. Ele deve conter pelo menos 4 caracteres alfanuméricos.");
-				igor = prompt("Por Favor, Insira o seu nome de usuário:");
-			}
-
-			alert(`Bem-vindo, ${igor}!`);
-
-		</script>
 		-->
 		<title>Envie sua mensagem</title>
     
