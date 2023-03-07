@@ -122,7 +122,7 @@ function postReply(commentId) {
 $("#submitButton").click(function () {
 	$("#comment-message").css('display', 'none');
 	var str = $("#frm-comment").serialize();
-
+	
 	$.ajax({
 		url: "AgregarComentario.php",
 		data: str,

@@ -16,17 +16,19 @@ h1{
 
         /*background-color: #fff;*/
         color: rgb(146, 214, 223);
-        background-image: url("../imagens/logo.png") ;
+        background-image: url("../imagens/logo.png");
+        margin: 0 auto;
         background-position: 400px;
         background-repeat: no-repeat;
         margin-top: 0px !important;
         margin-bottom: 40px !important;
-        margin-left: 90px !important;
+        /*margin-left: 90px !important;*/
         padding-bottom: 120px;
         position: relative;
         top: 20px;
 
 }
+
 #login {
 
     /*text-align: center;*/
