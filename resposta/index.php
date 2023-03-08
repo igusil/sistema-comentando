@@ -67,7 +67,7 @@
 <div class="comment-form-container">
 <form id="frm-comment">
 <div class="input-row">
-    <input type="hidden" name="comment_id" id="comment" placeholder="Name" /> 
+    <input type="hidden" name="comment_id" id="commentId" placeholder="Name" /> 
     <input class="form-control" type="text" name="name" id="name" placeholder="nome" />
 </div>
 
@@ -78,7 +78,7 @@
     </p>
 </div>
 
-<!-- 
+<!--
 	BUTTON DO COMENTAR
 	commentID CHAMA O INPUT NO SCRIPT E ENVIA PARA AS REPLYS
 -->
@@ -88,8 +88,9 @@
 	id="submitButton"
 	style="margin-left: 350px;
 	border-radius:30px;
-	height:50px;"
-	>Comentar</button>
+	height:50px;">
+	Comentar
+</button>
 
 <div>
 	<!--input button (botão comentar =>
@@ -102,7 +103,8 @@
 	font-weight:bold;" 
 	type="button" class="btn btn-primary" 
 	id="submitButton" value="Comentar"/>
-	<div id="comment-message">Comentario Criado</div> -->
+	<div id="comment-message">Comentario Criado</div> 
+-->
 </div>
 
 </form>
@@ -113,12 +115,14 @@
 </div>
 
 <script>
+
 /* //Função para focar no input name e inserir resposta
 function postReply(commentId) {
 	$('commentId').val(commentId);
 	$("name").focus();
 }
 */
+
 $("#submitButton").click(function () {
 	$("#comment-message").css('display', 'none');
 	var str = $("#frm-comment").serialize();
@@ -156,7 +160,6 @@ $("#submitBtn").click(function () {
 			$("#name").val("");
 			$("#comment").val("");
 			$("#commentId").val("");
-			
 			listComment();
 		}
 	});
