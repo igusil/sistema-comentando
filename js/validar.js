@@ -16,7 +16,7 @@ function Login() {
         var us = usuarios[u];
         if (us.login === usuario && us.senha === senha) {
             
-            window.location.href = "http://192.168.1.13:4000/";
+            window.location.href = "http://localhost/sistema-comentando/resposta";
             /*return true;*/
             /*alert("dados corretos")*/
         }

@@ -1,4 +1,6 @@
 /*Desenvolvido por José Igor @j.igr*/
+/* Validação de usuário por client side */
+
 
 var usuarios = [
     {"login": "igor", "senha": "igor"},
@@ -14,9 +16,9 @@ function Login() {
         var us = usuarios[u];
         if (us.login === usuario && us.senha === senha) {
             
-            window.location.href = "http://localhost/sistema-comentando/resposta";
+            window.location.href = "http://localhost/sistema-comentando/resposta/";
             /*return true;*/
-            alert("dados corretos")
+            /*alert("dados corretos")*/
         }
     }
     alert("Dados incorretos");
