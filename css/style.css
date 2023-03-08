@@ -34,6 +34,15 @@ h3 {
 	
 }
 
+textarea:focus, input:focus {
+	box-shadow: 0 0 0 0;
+	outline: 0;
+}
+/*
+input:focus {
+	outline: none;
+}
+*/
 .output-container {
 	width: 900px;
 	margin: 0 auto;
@@ -55,6 +64,7 @@ h3 {
 	height: 60px;
 	font-family: 'Ubuntu', sans-serif;
 	font-size:1rem;
+	outline: none;
 }
 
 .form-control{
