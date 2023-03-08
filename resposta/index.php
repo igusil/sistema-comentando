@@ -74,7 +74,7 @@
 <!-- Area de Texto para input dos comentarios-->
 <div class="input-row">
     <p class="emoji-picker-container">
-      <textarea class="input-field" data-emojiable="true" data-emoji-input="unicode" type="text" name="coment" id="coment" placeholder="sua mensagem"></textarea>
+      <textarea class="input-field" data-emojiable="true" data-emoji-input="unicode" type="text" name="comment" id="comment" placeholder="sua mensagem"></textarea>
     </p>
 </div>
 
