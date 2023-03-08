@@ -1,9 +1,7 @@
 /*Desenvolvido por José Igor @j.igr*/
 
-
-
 var usuarios = [
-    {"login": "teste0", "senha": "abc"},
+    {"login": "igor", "senha": "igor"},
     /*{"login": "teste1", "senha": "teste1"},*/
     /*{"login": "test2", "senha": "teste"},*/
 ];
@@ -18,13 +16,12 @@ function Login() {
             
             window.location.href = "http://192.168.1.13:4000/";
             /*return true;*/
-            /*alert("dados corretos")*/
+            alert("dados corretos")
         }
     }
     alert("Dados incorretos");
     return false;
 }
-
 
 /*var a = document.getElementById("area")
 a.addEventListener('mouseenter',clica)
