@@ -19,7 +19,7 @@
 }
 
 body {
-	background-image: url("/imagens/back1.png");
+	background-image: url("../back1.png");
 	background-repeat: no-repeat;
 	background-size: 1800px;
 	background-position: right 0px;
@@ -38,11 +38,11 @@ textarea:focus, input:focus {
 	box-shadow: 0 0 0 0;
 	outline: 0;
 }
-/*
+
 input:focus {
 	outline: none;
 }
-*/
+
 .output-container {
 	width: 900px;
 	margin: 0 auto;
@@ -177,7 +177,7 @@ span.posted-by {
 #comment-message {
 	font-weight: bold;
 	margin-left: 20px;
-	color: #000078;
+	color: #004478;
 	display: none;
 }
 
