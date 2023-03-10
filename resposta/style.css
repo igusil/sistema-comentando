@@ -23,6 +23,22 @@ h3 {
 	
 }
 
+#login {
+	border-radius: 50px;
+	font-size: 12pt;
+	font-weight: bold;
+	/*color: #fdfdfd;*/
+	background: #ebebebd1;
+	border: none;
+	/*background-color: #fdfdfd93;*/
+	float: right;
+	cursor: pointer;
+	height: 50px;
+	text-decoration: none;
+	font-family: 'Righteous', cursive;
+	
+}
+
 .output-container {
 	width: 900px;
 	margin: 0 auto;
