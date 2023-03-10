@@ -2,20 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 
 * {
 	font-family: 'Ubuntu', sans-serif;
 }
 #login {
-	border-radius: 20px;
+	border-radius: 50px;
 	font-size: 12pt;
 	font-weight: bold;
 	/*color: #fdfdfd;*/
-	background: #ebebebb1;
+	background: #ebebebd1;
 	border: none;
 	/*background-color: #fdfdfd93;*/
-	margin-left: 1280px;
+	float: right;
 	cursor: pointer;
+	height: 50px;
+	text-decoration: none;
+	font-family: 'Righteous', cursive;
+	
 }
 
 body {

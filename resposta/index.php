@@ -46,12 +46,10 @@
 <!-- conteudo com style do h1 e body-->
 		<h1 style="padding-bottom: 0; 
 				margin: 0 auto;
-				/*margin-left: 350px;*/
 				background-image: url(./imagens/logo.png); height: 163px;
 				background-repeat: no-repeat;
 				display: block;
-				/*margin-left: auto;
-				margin-right: auto;*/
+				background-position:center;
 				width: 50%;
 				" >
 		</h1>

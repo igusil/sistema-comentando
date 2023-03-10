@@ -9,21 +9,29 @@ var usuarios = [
 ];
 
 function Login() {
-    var usuario = document.getElementsByName('username')[0].value.toLowerCase();
-    var senha = document.getElementsByName('password')[0].value;
-
+    // Obtém o valor do campo de entrada do nome de usuário e converte para minúsculas
+    var usuario = document.getElementsByName("username")[0].value.toLowerCase();
+  
+    // Obtém o valor do campo de entrada de senha
+    var senha = document.getElementsByName("password")[0].value;
+  
+    // Percorre a matriz de usuários com um loop for...in
     for (var u in usuarios) {
-        var us = usuarios[u];
-        if (us.login === usuario && us.senha === senha) {
-            
-            window.location.href = "http://localhost/sistema-comentando/resposta/";
-            /*return true;*/
-            /*alert("dados corretos")*/
-        }
+      // Obtém um usuário da matriz
+      var us = usuarios[u];
+  
+      // Verifica se as credenciais do usuário atual são iguais as inseridas no input
+      if (us.login === usuario && us.senha === senha) {
+        // Se as credenciais correspondem, a função retorna verdadeiro e redireciona
+        window.location.href = "http://localhost/sistema-comentando/resposta/";
+        /*return true;*/
+      }
     }
-    alert("Dados incorretos");
+  
+    // Se as credenciais não correspondem a nenhum usuário na matriz, a função retorna falso
     return false;
-}
+  }
+  
 
 /*var a = document.getElementById("area")
 a.addEventListener('mouseenter',clica)
