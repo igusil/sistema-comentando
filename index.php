@@ -28,7 +28,7 @@
 
   <body>
 		<div id="logar">
-			<button type="button" id="login"><a href="./resposta/login.html">LOGIN</a></button>
+			<button type="button" id="login"><a href="./resposta/login.html">Log-in</a></button>
 		</div>
 		<hr>
 		<!-- conteudo com style do h1 e body-->

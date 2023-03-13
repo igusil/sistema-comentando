@@ -28,9 +28,9 @@
   </head>
 
   <body>
-		<!--<div id="logar">
-			<button type="button" id="login"><a href="./resposta/login.html">LOGIN</a></button>
-		</div>-->
+		<div id="logar">
+			<button type="button" id="login"><a href="../index.php">Log-out</a></button>
+		</div>
 		<hr>
 		<!-- conteudo com style do h1 e body-->
 		<h1 style="padding-bottom: 0; 
