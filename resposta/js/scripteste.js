@@ -28,7 +28,10 @@ $("#submitButton").click(function () {
 });
 
 /* 	********	SUBMIT DO BUTTON RESPOSTA	********  */
-
+/*
+A função $().click() é usada para definir um evento de clique para o botão "Enviar" 
+que envia o formulário de comentário para o servidor usando uma solicitação Ajax.
+*/
 $("#submitBtn").click(function () {
 	$("#comment-message").css('display', 'none');
 	var str = $("#frm-btn").serialize();
@@ -50,11 +53,17 @@ $("#submitBtn").click(function () {
 });
 
 /*  ****************************************************  */
-
+/*
+ A função $(document).ready() é usada para chamar a função listComment() 
+ quando a página é carregada, para exibir a lista de comentários e respostas iniciais. 
+ */
 $(document).ready(function () {
 	listComment();
 });
-
+/*
+A função $(function()) é usada para inicializar um seletor de emojis,
+ permitindo que os usuários adicionem emojis aos seus comentários.
+*/
 $(function () {
 	// Inicialização e criação emoji set from sprite sheet
 	window.emojiPicker = new EmojiPicker({
@@ -65,7 +74,10 @@ $(function () {
 
 	window.emojiPicker.discover();
 });
-
+/* A função listComment() é usada para exibir uma lista 
+de comentários e respostas existentes no sistema de comentários.
+Ele faz uma solicitação Ajax para pegar os dados do servidor e em depois
+usa jQuery para criar elementos HTML para mostrar os comentários e respostas. */
 function listComment() {
 $.post("ListaComentario.php",
 function (data) {
@@ -104,7 +116,11 @@ function (data) {
 	$("#output").html(list);
 });
 }
-
+/*
+A função listReplies(commentId, data, list) é usada para exibir uma lista de respostas
+ a um comentário específico. Ele é chamado dentro da função listComment() para exibir
+  as respostas dentro do comentário correspondente.
+*/
 function listReplies(commentId, data, list) {
 
 	for (var i = 0; (i < data.length); i++)
