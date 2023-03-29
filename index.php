@@ -28,7 +28,7 @@
 
   <body>
 		<div id="logar">
-			<button type="button" id="login"><a href="./resposta/login.html">LOGIN</a></button>
+			<button type="button" id="login"><a href="./resposta/login.html">Log-in</a></button>
 		</div>
 		<hr>
 		<!-- conteudo com style do h1 e body-->
@@ -124,7 +124,7 @@
 		<footer class="footer" style="border-radius: 100px; background-color: rgba(215, 243, 250, 0.466);">
 					<div class="container">
 						<span class="text-muted">
-							<p><strong>Visite </strong><a href="./login.html" target="_blank">Intranet</a></p>
+							<p><strong>Visite </strong><a href="http://192.168.1.110/ocomon/" target="_blank">Intranet</a></p>
 						</span> 
 					</div>
 		</footer>
