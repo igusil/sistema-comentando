@@ -3,13 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tempo de geração: 10-11-2022 00:55:57
+-- Tempo de geração: 03-11-2021 a las 00:55:57
 -- Versão do servidor: 10.4.20-MariaDB
--- Versão do PHP: 8.0.8
+-- Versão de PHP: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura de tabela para a tabela `tbl_comentarios`
+-- Estrutura da tabela para a tabela `tbl_comentarios`
 --
 
 CREATE TABLE `tbl_comentarios` (
@@ -33,32 +34,37 @@ CREATE TABLE `tbl_comentarios` (
   `comentario_nombre` varchar(40) CHARACTER SET utf8 NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*
+co_id: número inteiro de 11 dígitos, identifica cada registro na tabela.
+ Essa coluna é (NOT NULL), significa que um valor precisa ser fornecido 
+ para essa coluna durante a inserção de novos registros.
+*/
 
 --
--- Volcado de datos para la tabla `tbl_comentarios`
+-- Despejo de dados para a tabela `tbl_comentarios`
 --
 
 INSERT INTO `tbl_comentarios` (`co_id`, `parent_id`, `comentarios`, `comentario_nombre`, `fecha`) VALUES
 (22, 0, 'teste 👍', 'josé igor', '2023-01-30 06:26:18'),
-(23, 22, 'isso 😊👍', 'igor', '2023-01-01 30:26:47'),
-(24, 0, 'teste de comentarios', 'j.igr', '2023-01-03 06:27:21');
+(23, 22, 'isso 😊👍', 'Web', '2023-01-01 30:26:47'),
+(24, 0, 'teste de comentarios', 'web', '2023-01-03 06:27:21');
 
 --
--- Índices para tablas volcadas
+-- Índices para tabelas de despejo
 --
 
 --
--- Indices da tabela `tbl_comentarios`
+-- índices de tabela `tbl_comentarios`
 --
 ALTER TABLE `tbl_comentarios`
   ADD PRIMARY KEY (`co_id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `tbl_comentarios`
+-- AUTO_INCREMENT da tabela `tbl_comentarios`
 --
 ALTER TABLE `tbl_comentarios`
   MODIFY `co_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
